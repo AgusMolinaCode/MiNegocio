@@ -7,7 +7,7 @@ import { BiCategory, BiDownArrow } from "react-icons/bi";
 import { GiSkills } from "react-icons/gi";
 import { PiArrowFatDownFill } from "react-icons/pi";
 import Completion from "@/components/AiResult";
-import Link from "next/link";
+
 
 export interface FormDataType {
   name: string;
@@ -15,7 +15,6 @@ export interface FormDataType {
   category: string;
   experience: string;
   budget: string;
-  // Agregar esta línea para permitir propiedades adicionales
 }
 
 const Form = () => {
@@ -28,7 +27,7 @@ const Form = () => {
   });
 
   const [formArray, setFormArray] = useState<FormDataType[]>([]);
-  const [showCompletion, setShowCompletion] = useState(false); // Agregar esta línea
+  const [showCompletion, setShowCompletion] = useState(false); // 
 
   const handleInputChange = (
     event: React.ChangeEvent<
@@ -54,7 +53,7 @@ const Form = () => {
         budget: formData.budget,
       };
       setFormArray((prevFormArray) => [...prevFormArray, newFormData]);
-      setShowCompletion(true); // Establecemos showCompletion en true
+      setShowCompletion(true); 
     } else {
       alert("Por favor, completa todos los campos del formulario.");
     }
@@ -69,11 +68,11 @@ const Form = () => {
       budget: "",
     });
     setFormArray([]);
-    setShowCompletion(false); // Establecemos showCompletion en false
+    setShowCompletion(false); 
   };
 
   const handleEdit = () => {
-    setShowCompletion(false); // Establecemos showCompletion en false
+    setShowCompletion(false); 
   };
 
   return (
@@ -110,7 +109,7 @@ const Form = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className=" rounded-lg w-full border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                      className=" rounded-lg w-full border-gray-200 p-4 pe-12 text-md shadow-sm"
                       placeholder="Tu nombre"
                       required
                     />
@@ -130,7 +129,7 @@ const Form = () => {
                       rows={9}
                       value={formData.description}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg   border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                      className="w-full rounded-lg   border-gray-200 p-4 pe-12 text-md shadow-sm"
                       placeholder='Descripción de idea de negocio: Ejemplo: "Me gustaría establecer una tienda en línea especializada en productos de belleza y cuidado personal naturales y libres de químicos dañinos, promoviendo un estilo de vida más saludable."'
                       required
                     />
@@ -150,7 +149,7 @@ const Form = () => {
                       name="category"
                       value={formData.category}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                      className="w-full rounded-lg border-gray-200 p-4 pe-12 text-md shadow-sm"
                       placeholder='Categoría o industria: Ejemplo: "Alimentación y gastronomía"'
                       required
                     />
@@ -168,7 +167,7 @@ const Form = () => {
                       name="experience"
                       value={formData.experience}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                      className="w-full rounded-lg border-gray-200 p-4 pe-12 text-md shadow-sm"
                       placeholder='Nivel de experiencia emprendedora: Ejemplo: "Principiante"'
                       required
                     />
@@ -185,7 +184,7 @@ const Form = () => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg  border-gray-200 p-4 pe-12 text-sm shadow-sm appearance-none"
+                      className="w-full rounded-lg  border-gray-200 p-4 pe-12 text-md shadow-sm appearance-none"
                       required
                     >
                       <option value="">¿Cuál es tu presupuesto?</option>

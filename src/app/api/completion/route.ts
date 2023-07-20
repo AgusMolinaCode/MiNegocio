@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     messages: [
       {
         role: "user",
-        content: `Crea un plan de negocios en 4 pasos, de manera didactica y sencilla , empieza la respuesta saludando por el nombre. ${prompt}`,
+        content: `Crea un plan de negocios en 4 pasos, de manera didactica y sencilla , empieza la respuesta saludando por el nombre, luego de mostrar los 4 pasos,termina con un pequeño parrafo, no des un saludo final ni una despedida. ${prompt}`,
       },
     ],
     max_tokens: 700,

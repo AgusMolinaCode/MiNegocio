@@ -26,13 +26,16 @@ const Completion = ({ formData }: CompletionProps) => {
     initialInput: message,
   });
 
-  const completionRef = useRef<HTMLDivElement>(null); // Creamos la referencia
+  // const completionRef = useRef<HTMLDivElement>(null); // Creamos la referencia
 
-  useEffect(() => {
-    if (completionRef.current) {
-      completionRef.current.scrollIntoView({ behavior: "instant" });
-    }
-  }, [completion]);
+// useEffect(() => {
+//   if (completionRef.current) {
+//     completionRef.current.scrollIntoView({ behavior: "instant" });
+//   }
+//   if (!completion) {
+//     document.body.scrollTo({ top: document.body.scrollHeight, behavior: "instant" }); // Hacer scroll hasta el final de la página
+//   }
+// }, [completion]);
 
   const handleCopy = () => {
     setCopied(completion);
@@ -43,9 +46,9 @@ const Completion = ({ formData }: CompletionProps) => {
   };
 
   return (
-    <div className="max-w-[900px] flex justify-center mx-auto">
+    <div className="max-w-[900px] flex justify-center items-center mx-auto">
       <form onSubmit={handleSubmit}>
-        <div className="flex justify-center gap-8 px-2 md:m-5 ">
+        <div className=" grid content-center mt-3 items-center justify-center mx-auto   ">
           {isLoading && (
             <button
               type="button"
@@ -60,7 +63,7 @@ const Completion = ({ formData }: CompletionProps) => {
             type="submit"
             id="result"
             disabled={isLoading}
-            className="transition-background inline-flex h-12 items-center justify-center rounded-md border border-slate-800 bg-gradient-to-r from-yellow-100 via-orange-200 to-yellow-300 bg-[length:200%_200%] bg-[0%_0%] px-6 font-medium text-black duration-500 hover:bg-[100%_200%] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-5 md:mt-0"
+            className="transition-background inline-flex h-12 items-center justify-center rounded-md border border-slate-800 bg-gradient-to-r from-yellow-100 via-orange-200 to-yellow-300 bg-[length:200%_200%] bg-[0%_0%] px-6 font-medium text-black duration-500 hover:bg-[100%_200%] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-2 "
           >
             {isLoading ? "Generando..." : "Generar Respuesta"}
           </button>
@@ -76,8 +79,8 @@ const Completion = ({ formData }: CompletionProps) => {
 
         {completion && (
           <div
-            className="bg-gray-700 p-2 m-2 md:p-4  rounded-xl lg:w-[850px]"
-            ref={completionRef}
+            className="bg-gray-700  p-2 m-2 md:p-4  rounded-xl lg:w-[1000px]"
+            
           >
             <div className="flex justify-end m-2 gap-2" onClick={handleCopy}>
               {copied === completion ?
@@ -89,6 +92,7 @@ const Completion = ({ formData }: CompletionProps) => {
                 {copied === completion ? "Copiado!" : "Copiar Texto"}
               </p>
             </div>
+
             {completion &&
               completion.split("\n").map((line, index) => {
                 if (
