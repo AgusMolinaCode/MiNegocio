@@ -99,7 +99,7 @@ const Form = () => {
             <PiArrowFatDownFill size={90} className="text-gray-800" />
           </div>
 
-          <form onSubmit={handleSubmit} className={`${showCompletion ? 'pb-0' : 'pb-24'} mt-5 rounded-lg`}>
+          <form onSubmit={handleSubmit} className={`${showCompletion ? 'pb-0' : 'pb-24'} mt-5 px-2 rounded-lg`}>
             <div className="sm:flex justify-center gap-2 md:gap-8 mx-auto ">
               <div className="w-full md:w-[600px] grid">
                 <div>

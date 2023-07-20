@@ -77,9 +77,10 @@ const Completion = ({ formData }: CompletionProps) => {
           className="hidden"
         />
 
+        <div className="px-2">
         {completion && (
           <div
-            className="bg-gray-700  p-2 m-2 md:p-4  rounded-xl lg:w-[1000px]"
+            className="bg-gray-700 p-2 m-2 md:p-4  rounded-xl lg:w-[1000px]"
             
           >
             <div className="flex justify-end m-2 gap-2" onClick={handleCopy}>
@@ -116,6 +117,7 @@ const Completion = ({ formData }: CompletionProps) => {
               })}
           </div>
         )}
+        </div>
       </form>
     </div>
   );

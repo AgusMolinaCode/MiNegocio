@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex px-2 md:px-20 justify-between items-center pt-5">
+    <div className="flex px-3 md:px-20 justify-between items-center pt-5">
       <div>
         <Link href="/">
           <GiArtificialHive
